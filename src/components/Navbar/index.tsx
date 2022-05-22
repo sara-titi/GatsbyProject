@@ -1,17 +1,18 @@
 import React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import {Nav, Links, Link} from './styledComponent';
 
 // import { Container } from './styles';
 
 const Navbar = () =>{
     return (
-        <nav>
+        <Nav>
          
-          <div className="links">
+          <Links>
             <Link to="/">Home</Link>
             <Link to="/list">List</Link>
-          </div>
-        </nav>
+          </Links>
+        </Nav>
       )
 }
 
