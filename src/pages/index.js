@@ -1,24 +1,29 @@
-import * as React from "react"
-import Layout from '@components/Layout';
-//  import Layout from '@components/Layout/layout';
-import Product from '@components/Card';
+import React from "react";
+import Home from "./home";
+import { useKeycloak } from "@react-keycloak/web";
+import store from "../stateManagment/store";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
 
+const IndexPage = ()=> {
+  const { keycloak, initialized } = useKeycloak();
 
-const IndexPage = (() => {
   return (
-   
-   <Layout>
-     <h1>Home page</h1>
+    <div>
+      <>
+        {keycloak.authenticated ? <Home /> : 
+        (<div>
+          <p>The user is  NOT authenticated</p>
+          <button type="button" className="btn btn-light" onClick={() => keycloak.login()}>Login</button>
+        </div>
+      )}
+      </>
 
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    
-  </Layout>
-   
-  )
+      {/* <div>{keycloak.authenticated ? <Home /> : authenticated} </div> */}
+     
+    </div>
+  );
 }
-);
 
-export default IndexPage
+export default IndexPage;

@@ -1,0 +1,77 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.local/bin/kubectl:/Library/Apple/usr/bin:/Users/sarafayez/.rvm/bin:/Users/sarafayez/.rvm/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/sarafayez/Documents/gatsbyProject/test/package.json: Unexpected token / in JSON at position 677
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "test",
+    "version": "1.0.0",
+    "private": true,
+    "description": "test",
+    "author": "SaraFayez",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build && build-keycloak-theme",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean"
+    },
+    "dependencies": {
+      "@react-keycloak/web": "^3.4.0",
+      "@types/jest": "^27.5.1",
+      "@types/node": "^17.0.35",
+      "@types/react": "^18.0.9",
+      "@types/react-dom": "^18.0.4",
+      "@types/react-window": "^1.8.5",
+      "@types/styled-components": "^5.1.25",
+      "axios": "^0.27.2",
+      "eslint-import-resolver-alias": "^1.1.2",
+      // "gatsby": "^4.14.1",
+      "gatsby": "^2.24.9",
+      "gatsby-plugin-alias-imports": "^1.0.5",
+      "gatsby-plugin-google-analytics": "^4.14.0",
+      "keychain": "^1.3.0",
+      // "keycloak-js": "^18.0.0",
+      "keycloak-js": "^12.0.4",
+      "keycloak-react-theming": "0.0.29",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-router-dom": "^6.3.0",
+      "react-window-infinite-loader": "^1.0.7",
+      "react-x-keychain": "^3.0.0",
+      "styled-components": "^5.3.5",
+      "typescript": "^4.6.4"
+    },
+    "devDependencies": {
+      "@types/moment": "^2.13.0",
+      "gatsby-plugin-root-import": "^2.0.8"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
