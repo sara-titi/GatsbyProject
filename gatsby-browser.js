@@ -8,7 +8,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "@popperjs/core/dist/umd/popper.min.js";
 // import store from "../../stateManagment/store";
 import store from "./src/stateManagment/store";
-//
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
