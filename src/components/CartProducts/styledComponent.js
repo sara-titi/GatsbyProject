@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   width: 15rem;
-  height:12rem;
+  height:13rem;
   float: center;
   margin-bottom: 2rem;
 `;

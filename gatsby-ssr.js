@@ -7,14 +7,16 @@
 import axios from "axios";
 import React from "react";
 import { ReactKeycloakProvider } from "@react-keycloak/web";
-
+import store from "./src/stateManagment/store";
+import { Provider } from 'react-redux';
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <ReactKeycloakProvider 
-    authClient={{}}
->
-    {element}
-</ReactKeycloakProvider>
+    <ReactKeycloakProvider authClient={{}} >
+       <Provider store={store}>
+
+          {element}
+          </Provider>
+  </ReactKeycloakProvider>
   );
 };
